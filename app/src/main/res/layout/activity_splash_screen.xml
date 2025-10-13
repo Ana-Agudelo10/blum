@@ -12,24 +12,24 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
-        
+        android:gravity="center"
+        android:orientation="vertical">
+
         <com.airbnb.lottie.LottieAnimationView
-            app:lottie_fileName="splash_Blum.gif"
-            app:lottie_imageAssetsFolder="assets"
-            app:lottie_loop="true"
-            app:lottie_autoPlay="true"
             android:layout_width="300dp"
-            android:layout_height="300dp"/>
-        
+            android:layout_height="300dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="Splash_Blum.json"
+            app:lottie_imageAssetsFolder="assets"
+            app:lottie_loop="true" />
+
         <TextView
-            android:textSize="25sp"
-            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:text="@string/app_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </RelativeLayout>
