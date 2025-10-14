@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "856079584079",
+    "project_id": "tienda-virtual-dd6a4",
+    "storage_bucket": "tienda-virtual-dd6a4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856079584079:android:6c835bcdf65f505548533a",
+        "android_client_info": {
+          "package_name": "com.ecommerce.blum"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwJTiWjGfkXop9ggOq8RcjREU53vrJhgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

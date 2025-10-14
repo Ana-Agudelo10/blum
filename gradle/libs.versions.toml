@@ -11,6 +11,8 @@ activity = "1.11.0"
 constraintlayout = "2.2.1"
 lottieV="4.2.1"
 
+googleServiceV="4.4.3"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -25,4 +27,6 @@ lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottieV
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+googleService = { id = "com.google.gms.google-services", version.ref = "googleServiceV" }
 
