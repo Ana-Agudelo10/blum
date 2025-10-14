@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Blum</string>
+
+    <string name="open_drawer">open drawer</string>
+    <string name="close_drawer">Close drawer</string>
+
+    <string name="op_inicio_v">Inicio</string>
+    <string name="op_mi_tienda">Mi tienda</string>
+    <string name="op_reseñas_v">Reseñas</string>
+    <string name="op_cerrar_sesion_v">Cerrar sesion</string>
+
+    <string name="op_mis_productos_v">Mis productos</string>
+    <string name="op_mis_ordenes_v">Órdenes</string>
+
+    <string name="txt_bienvenida">Bienvenido(a)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!--<string name="op">Blum</string>
+    <string name="op">Blum</string>-->
 </resources>
