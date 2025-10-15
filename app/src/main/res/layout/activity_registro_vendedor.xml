@@ -26,7 +26,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/Logo_blum"
+            android:src="@drawable/logo_blum"
             android:layout_width="80dp"
             android:layout_height="80dp"/>
 

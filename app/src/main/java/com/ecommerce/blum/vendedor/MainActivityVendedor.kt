@@ -1,6 +1,7 @@
 package com.ecommerce.blum.vendedor
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -20,7 +21,7 @@ import com.ecommerce.blum.vendedor.Nav_fragments_vendedor.FragmentInicioV
 import com.ecommerce.blum.vendedor.Nav_fragments_vendedor.FragmentMiTiendaV
 import com.ecommerce.blum.vendedor.Nav_fragments_vendedor.FragmentResenaV
 import com.google.android.material.navigation.NavigationView
-
+import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {

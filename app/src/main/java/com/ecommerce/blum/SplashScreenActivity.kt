@@ -3,6 +3,7 @@ package com.ecommerce.blum
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ecommerce.blum.vendedor.MainActivityVendedor
 
@@ -12,6 +13,8 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         verBienvenida()
+
+        Toast.makeText(applicationContext, "Bienvenido(a)", Toast.LENGTH_SHORT).show()
     }
 
     private fun verBienvenida() {
