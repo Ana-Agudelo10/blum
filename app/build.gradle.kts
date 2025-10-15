@@ -48,7 +48,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.lottie)
+    implementation(libs.lottie) /*Animaciones*/
+    implementation(libs.firebaseAuth) /*Autenticaciión Firebase*/
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

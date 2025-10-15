@@ -12,6 +12,7 @@ constraintlayout = "2.2.1"
 lottieV="4.2.1"
 
 googleServiceV="4.4.3"
+firebaseAuthV="24.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -23,6 +24,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottieV" }
+firebaseAuth={group="com.google.firebase", name="firebase-auth", version.ref="firebaseAuthV"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

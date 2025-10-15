@@ -26,6 +26,7 @@ import com.google.android.material.navigation.NavigationView
 class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var baiding: ActivityMainVendedorBinding
+    private var firebaseAuth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +37,11 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        comprobarSesion()
+
+
 
         baiding.navegationView.setNavigationItemSelectedListener(this)
 
@@ -53,6 +59,16 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
         replaceFragment(FragmentInicioV())
         baiding.navegationView.setCheckedItem(R.id.op_inicio_v)
 
+    }
+
+    private fun comprobarSesion() {
+        /*Si el usuario no ha iniciado sesión*/
+        if(firebaseAuth!!.currentUser== null){
+            startActivity(Intent(applicationContext, RegistroVendedorActivity::class.java))
+            Toast.makeText(applicationContext, "Vendedor no registrado o no logueado", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(applicationContext, "Vendedor en linea", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun replaceFragment(fragment: Fragment) {
