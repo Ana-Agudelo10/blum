@@ -72,7 +72,8 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
     private fun comprobarSesion() {
         /*Si el usuario no ha iniciado sesión*/
         if(firebaseAuth!!.currentUser== null){
-            startActivity(Intent(applicationContext, LoginVendedorActivity::class.java))
+            //Ir a la pantalla de login
+            //startActivity(Intent(applicationContext, LoginVendedorActivity::class.java))
         } else {
             Toast.makeText(applicationContext, "Vendedor en linea", Toast.LENGTH_SHORT).show()
         }
