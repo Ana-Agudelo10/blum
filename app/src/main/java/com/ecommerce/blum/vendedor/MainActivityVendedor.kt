@@ -26,15 +26,15 @@ import com.google.firebase.auth.FirebaseAuth
 
 class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
-    private lateinit var baiding: ActivityMainVendedorBinding
+    private lateinit var binding: ActivityMainVendedorBinding
     private var firebaseAuth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        baiding = ActivityMainVendedorBinding.inflate(layoutInflater)
+        binding = ActivityMainVendedorBinding.inflate(layoutInflater)
 
-        setContentView(baiding.root)
+        setContentView(binding.root)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -44,21 +44,21 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
 
 
 
-        baiding.navegationView.setNavigationItemSelectedListener(this)
+        binding.navegationView.setNavigationItemSelectedListener(this)
 
         val toggle = ActionBarDrawerToggle(
             this,
-            baiding.drawerLayout,
+            binding.drawerLayout,
             toolbar,
             R.string.open_drawer,
             R.string.close_drawer
         )
 
-        baiding.drawerLayout.addDrawerListener(toggle)
+        binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         replaceFragment(FragmentInicioV())
-        baiding.navegationView.setCheckedItem(R.id.op_inicio_v)
+        binding.navegationView.setCheckedItem(R.id.op_inicio_v)
 
     }
 
@@ -73,7 +73,6 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
         /*Si el usuario no ha iniciado sesión*/
         if(firebaseAuth!!.currentUser== null){
             startActivity(Intent(applicationContext, LoginVendedorActivity::class.java))
-            Toast.makeText(applicationContext, "Vendedor no registrado o no logueado", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(applicationContext, "Vendedor en linea", Toast.LENGTH_SHORT).show()
         }
@@ -110,7 +109,7 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
             }
         }
 
-        baiding.drawerLayout.closeDrawer(GravityCompat.START)
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
 
     }
