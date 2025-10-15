@@ -8,10 +8,12 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Mis productos"
+        android:layout_height="583dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="50dp"
         android:gravity="center"
+        android:text="Mis productos"
         android:textSize="25sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 </FrameLayout>
