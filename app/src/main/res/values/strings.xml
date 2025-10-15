@@ -16,6 +16,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- Registro de vendedor -->
+    <string name="txtRegistroV">Registro de vendedor</string>
+    <string name="etNombresV">Nombres completos</string>
+    <string name="etEmailV">Email</string>
+    <string name="etPasswordV">Password</string>
+    <string name="etCPasswordV">Confirmar Password</string>
+    <string name="btnRegistrarV">Registrar</string>
 
     <!--<string name="op">Blum</string>
     <string name="op">Blum</string>-->
