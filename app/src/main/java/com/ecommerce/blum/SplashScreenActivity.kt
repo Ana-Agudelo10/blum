@@ -18,7 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun verBienvenida() {
-        object : CountDownTimer(3000, 1000) {
+        object : CountDownTimer(3000, 10) {
             override fun onTick(millisUntilFinished: Long) {
 
             }

@@ -3,6 +3,7 @@
     <style name="Base.Theme.Blum" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/celeste_claro</item>
+        <item name="android:windowBackground">@color/bg_white</item>
     </style>
 
     <style name="Theme.Blum" parent="Base.Theme.Blum" />

@@ -15,10 +15,13 @@
         android:padding="15dp">
 
         <TextView
-            android:text="@string/txtRegistroV"
-            android:textSize="18sp"
+            android:text="Registrate ahora"
+            android:textSize="35sp"
             android:textStyle="bold"
             android:layout_gravity="center"
+            android:fontFamily="@font/alkalami"
+            android:textColor="@color/text_title"
+            android:layout_marginTop="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
