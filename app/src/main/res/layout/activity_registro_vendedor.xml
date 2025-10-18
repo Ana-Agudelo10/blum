@@ -15,7 +15,7 @@
         android:padding="15dp">
 
         <TextView
-            android:text="Registrate ahora"
+            android:text="@string/registrate_ahora"
             android:textSize="35sp"
             android:textStyle="bold"
             android:layout_gravity="center"

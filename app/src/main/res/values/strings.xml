@@ -30,6 +30,10 @@
     <string name="btnLoginV">Ingresar</string>
     <string name="txtNoCuenta">¿No tienes una cuenta?</string>
     <string name="tvRegistrarV">Registrarme</string>
+    <string name="Unete">Unete</string>
+    <string name="subTitle">Estamos felices de que estes aqui</string>
+    <string name="title_blum">Blum</string>
+    <string name="registrate_ahora">Registrate ahora</string>
 
 
     <!--<string name="op">Blum</string>
