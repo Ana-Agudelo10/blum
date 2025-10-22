@@ -1,9 +1,10 @@
-package com.ecommerce.blum
+package com.ecommerce.blum.cliente
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.ecommerce.blum.R
 
-class MainActivity : AppCompatActivity() {
+class MainActivityCliente : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

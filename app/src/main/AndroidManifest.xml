@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".cliente.MainActivityCliente"
             android:exported="true" />
     </application>
 

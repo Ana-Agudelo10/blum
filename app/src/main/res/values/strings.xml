@@ -4,13 +4,24 @@
     <string name="open_drawer">open drawer</string>
     <string name="close_drawer">Close drawer</string>
 
+    <!-- Navegation Drawel Vendedor -->
     <string name="op_inicio_v">Inicio</string>
     <string name="op_mi_tienda">Mi tienda</string>
     <string name="op_reseñas_v">Reseñas</string>
     <string name="op_cerrar_sesion_v">Cerrar sesion</string>
 
+    <!-- Navegación Drawel Cliente -->
+    <string name="op_inicio_c">Inicio</string>
+    <string name="op_mi_perfil_c">Mi perfil</string>
+    <string name="op_cerrar_sesion_c">Cerrar Sesión</string>
+
+    <!-- Button Navigation Bar Vendedor -->
     <string name="op_mis_productos_v">Mis productos</string>
     <string name="op_mis_ordenes_v">Órdenes</string>
+
+    <!-- Navegación Drawel Cliente -->
+    <string name="op_tienda_c">Tienda</string>
+    <string name="op_mi_ordenes_c">Mis Ordenes</string>
 
     <string name="txt_bienvenida">Bienvenido(a)</string>
     <!-- TODO: Remove or change this placeholder text -->
