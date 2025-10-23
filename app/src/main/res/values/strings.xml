@@ -21,7 +21,7 @@
 
     <!-- Navegación Drawel Cliente -->
     <string name="op_tienda_c">Tienda</string>
-    <string name="op_mi_ordenes_c">Mis Ordenes</string>
+    <string name="op_mis_ordenes_c">Mis Ordenes</string>
 
     <string name="txt_bienvenida">Bienvenido(a)</string>
     <!-- TODO: Remove or change this placeholder text -->
