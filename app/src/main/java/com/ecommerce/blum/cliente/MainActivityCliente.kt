@@ -1,7 +1,6 @@
 package com.ecommerce.blum.cliente
 
 import android.os.Bundle
-import android.view.Gravity
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -12,8 +11,8 @@ import androidx.fragment.app.Fragment
 import com.ecommerce.blum.R
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentMisOrdenesC
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentTiendaC
-import com.ecommerce.blum.cliente.Nav_Fragments_Cliente.FragmenMiPerfilCliente
-import com.ecommerce.blum.cliente.Nav_Fragments_Cliente.FragmentInicioCliente
+import com.ecommerce.blum.cliente.Nav_Fragments_Cliente.FragmenMiPerfilC
+import com.ecommerce.blum.cliente.Nav_Fragments_Cliente.FragmentInicioC
 import com.ecommerce.blum.databinding.ActivityMainClienteBinding
 import com.google.android.material.navigation.NavigationView
 
@@ -45,7 +44,7 @@ class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationIte
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        replaceFragmente(FragmentInicioCliente())
+        replaceFragmente(FragmentInicioC())
     }
 
     private fun replaceFragmente(fragment: Fragment) {
@@ -59,10 +58,10 @@ class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationIte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.op_inicio_c -> {
-                replaceFragmente(FragmentInicioCliente())
+                replaceFragmente(FragmentInicioC())
             }
             R.id.op_mi_perfil_c -> {
-                replaceFragmente(FragmenMiPerfilCliente())
+                replaceFragmente(FragmenMiPerfilC())
             }
             R.id.op_cerrar_sesion_c -> {
                 Toast.makeText(applicationContext, "Has cerrado sesión.", Toast.LENGTH_SHORT).show()

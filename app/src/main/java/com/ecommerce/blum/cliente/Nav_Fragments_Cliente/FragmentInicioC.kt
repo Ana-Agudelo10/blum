@@ -8,19 +8,19 @@ import android.view.ViewGroup
 import com.ecommerce.blum.R
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentMisOrdenesC
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentTiendaC
-import com.ecommerce.blum.databinding.ActivityLoginVendedorBinding
-import com.ecommerce.blum.databinding.FragmentInicioClienteBinding
+import com.ecommerce.blum.databinding.FragmentInicioCBinding
 
 
-class FragmentInicioCliente : Fragment() {
 
-    private lateinit var binding: FragmentInicioClienteBinding
+class FragmentInicioC : Fragment() {
+
+    private lateinit var binding: FragmentInicioCBinding
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
 
-        binding = FragmentInicioClienteBinding.inflate(inflater, container, false)
+        binding = FragmentInicioCBinding.inflate(inflater, container, false)
 
 
         binding.bottomNavigation.setOnItemSelectedListener {
