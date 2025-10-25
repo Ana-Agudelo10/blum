@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vendedor.LoginVendedorActivity">
+    tools:context=".cliente.LoginClienteActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
 
         <TextView
             android:layout_marginTop="50dp"
-            android:text="@string/Unete"
+            android:text="@string/txtLoginC"
             android:layout_gravity="center"
             android:textSize="35sp"
             android:textStyle="bold"
@@ -24,7 +24,6 @@
             android:textColor="@color/text_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
         <TextView
             android:text="@string/subTitle"
             android:layout_gravity="center"
@@ -33,84 +32,83 @@
             android:textColor="@color/text_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
+        
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:src="@drawable/logo_blum"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/text_title"
-            android:src="@drawable/logo_blum" />
+            android:layout_marginBottom="10dp"/>
 
-        <!-- Email -->
+
+        <!--Email-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
+            
             <EditText
                 android:id="@+id/etEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ico_email"
-                android:background="@android:color/white"
-                android:drawablePadding="10dp"
                 android:hint="@string/etEmail"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/ico_email"
+                android:drawablePadding="5dp"
+                android:background="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Password -->
+        <!--Password-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
             android:layout_marginTop="16dp" >
 
+
             <EditText
                 android:id="@+id/etPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:drawableStart="@drawable/ico_password"
-                android:background="@android:color/white"
-                android:drawablePadding="10dp"
+                android:drawablePadding="5dp"
                 android:hint="@string/etPassword"
-                android:inputType="textPassword" />
+                android:layout_width="match_parent"
+                android:background="@android:color/white"
+                android:layout_height="wrap_content"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Boton de login -->
+        <!-- Botton Login de cliente-->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLoginV"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/btnLoginC"
+            android:text="@string/btnLoginC"
+            android:textAllCaps="true"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:text="@string/btnLoginV"
-            android:textAllCaps="true"
-            app:cornerRadius="8dp" />
-
-        <!-- No tienes cuenta -->
+            app:cornerRadius="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <!-- txt-->
+       <TextView
+           android:text="@string/txtNoCuenta"
+           android:layout_gravity="end"
+           android:layout_marginEnd="10dp"
+           android:layout_marginTop="10dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+        <!-- Registrar Cliente-->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/tvRegistrarC"
+            android:text="@string/tvRegistrarC"
             android:layout_gravity="end"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:text="@string/txtNoCuenta" />
-
-        <!-- registrar un vendedor -->
-        <TextView
-            android:id="@+id/tvRegistrarV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:text="@string/tvRegistrarV"
+            android:textSize="17sp"
+            android:textStyle="bold"
             android:textColor="@color/celeste"
-            android:textStyle="bold" />
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

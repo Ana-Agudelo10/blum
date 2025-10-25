@@ -4,6 +4,9 @@
     <string name="open_drawer">open drawer</string>
     <string name="close_drawer">Close drawer</string>
 
+    <string name="tipoVendedor">Vendedor</string>
+    <string name="tipoCliente">Cliente</string>
+
     <!-- Navegation Drawel Vendedor -->
     <string name="op_inicio_v">Inicio</string>
     <string name="op_mi_tienda">Mi tienda</string>
@@ -51,6 +54,10 @@
     <string name="title_blum">Blum</string>
     <string name="registrate_ahora">Registrate ahora</string>
 
+    <!-- Login de cliente -->
+    <string name="txtLoginC">Unete C</string>
+    <string name="btnLoginC">Ingresar</string>
+    <string name="tvRegistrarC">Registrarme</string>
 
     <!--<string name="op">Blum</string>
     <string name="op">Blum</string>-->

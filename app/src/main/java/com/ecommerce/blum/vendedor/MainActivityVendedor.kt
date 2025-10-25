@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.ecommerce.blum.R
+import com.ecommerce.blum.SeleccionarTipoActivity
 import com.ecommerce.blum.databinding.ActivityMainVendedorBinding
 import com.ecommerce.blum.vendedor.Bottom_nav_fragments_vendedor.FragmentMisProductosV
 import com.ecommerce.blum.vendedor.Bottom_nav_fragments_vendedor.FragmentOrdenesV
@@ -64,7 +65,7 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
 
     private fun cerrarSesion() {
         firebaseAuth!!.signOut()
-        startActivity(Intent(applicationContext, LoginVendedorActivity::class.java))
+        startActivity(Intent(applicationContext, SeleccionarTipoActivity::class.java))
         finish()
         Toast.makeText(applicationContext, "Has cerrado sesion", Toast.LENGTH_SHORT).show()
     }
@@ -73,7 +74,7 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
         /*Si el usuario no ha iniciado sesión*/
         if(firebaseAuth!!.currentUser== null){
             //Ir a la pantalla de login
-            startActivity(Intent(applicationContext, LoginVendedorActivity::class.java))
+            startActivity(Intent(applicationContext, SeleccionarTipoActivity::class.java))
         } else {
             Toast.makeText(applicationContext, "Vendedor en linea", Toast.LENGTH_SHORT).show()
         }

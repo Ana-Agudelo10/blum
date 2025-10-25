@@ -45,7 +45,7 @@ class SplashScreenActivity : AppCompatActivity() {
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser == null){
 
-            startActivity(Intent(this, MainActivityVendedor::class.java ))
+            startActivity(Intent(this, SeleccionarTipoActivity::class.java ))
         }else{
             val reference = FirebaseDatabase.getInstance().getReference("Usuarios")
             reference.child(firebaseUser.uid)
