@@ -1,5 +1,7 @@
 package com.ecommerce.blum.cliente
 
+import android.content.Intent
+import android.health.connect.datatypes.units.Length
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -9,16 +11,19 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.ecommerce.blum.R
+import com.ecommerce.blum.SeleccionarTipoActivity
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentMisOrdenesC
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentTiendaC
 import com.ecommerce.blum.cliente.Nav_Fragments_Cliente.FragmenMiPerfilC
 import com.ecommerce.blum.cliente.Nav_Fragments_Cliente.FragmentInicioC
 import com.ecommerce.blum.databinding.ActivityMainClienteBinding
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener{
 
     private lateinit var binding: ActivityMainClienteBinding
+    private var firebaseAuth : FirebaseAuth?= null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +35,9 @@ class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationIte
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        comprobarSesion()
 
         binding.NavigationView.setNavigationItemSelectedListener(this)
 
@@ -44,10 +52,29 @@ class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationIte
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        replaceFragmente(FragmentInicioC())
+        replaceFragment(FragmentInicioC())
     }
 
-    private fun replaceFragmente(fragment: Fragment) {
+    private fun comprobarSesion(){
+        if (firebaseAuth!!.currentUser==null){
+            startActivity(Intent(this@MainActivityCliente, SeleccionarTipoActivity::class.java))
+            finishAffinity()
+
+
+        }else{
+            Toast.makeText(this, "Usuario en linea", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun cerrarSesion(){
+        firebaseAuth!!.signOut()
+        startActivity(Intent(this@MainActivityCliente, SeleccionarTipoActivity::class.java))
+        finishAffinity()
+        Toast.makeText(this, "Cerraste Sesion", Toast.LENGTH_SHORT).show()
+    }
+
+
+    private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.navFragment, fragment)
@@ -58,19 +85,19 @@ class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationIte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.op_inicio_c -> {
-                replaceFragmente(FragmentInicioC())
+                replaceFragment(FragmentInicioC())
             }
             R.id.op_mi_perfil_c -> {
-                replaceFragmente(FragmenMiPerfilC())
+                replaceFragment(FragmenMiPerfilC())
             }
             R.id.op_cerrar_sesion_c -> {
-                Toast.makeText(applicationContext, "Has cerrado sesión.", Toast.LENGTH_SHORT).show()
+              cerrarSesion()
             }
             R.id.op_tienda_c -> {
-                replaceFragmente(FragmentTiendaC())
+                replaceFragment(FragmentTiendaC())
             }
             R.id.op_mis_ordenes_c -> {
-                replaceFragmente(FragmentMisOrdenesC())
+                replaceFragment(FragmentMisOrdenesC())
             }
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)
