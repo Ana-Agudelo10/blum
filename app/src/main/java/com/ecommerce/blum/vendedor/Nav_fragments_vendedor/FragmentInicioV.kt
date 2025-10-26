@@ -1,6 +1,7 @@
 package com.ecommerce.blum.vendedor.Nav_fragments_vendedor
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import com.ecommerce.blum.R
 import com.ecommerce.blum.databinding.FragmentInicioVBinding
 import com.ecommerce.blum.vendedor.Bottom_nav_fragments_vendedor.FragmentMisProductosV
 import com.ecommerce.blum.vendedor.Bottom_nav_fragments_vendedor.FragmentOrdenesV
+import com.ecommerce.blum.vendedor.Productos.AgregarProductoActivity
 
 class FragmentInicioV : Fragment() {
 
@@ -43,11 +45,7 @@ class FragmentInicioV : Fragment() {
         binding.bottomNavigation.selectedItemId = R.id.op_mis_productos_v
 
         binding.addFab.setOnClickListener {
-            Toast.makeText(
-                mContext,
-                "Haz echo clic en el boton para agregar un nuevo producto",
-                Toast.LENGTH_SHORT
-            ).show()
+            startActivity(Intent(context, AgregarProductoActivity::class.java))
         }
 
         return binding.root

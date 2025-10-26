@@ -59,6 +59,19 @@
     <string name="btnLoginC">Ingresar</string>
     <string name="tvRegistrarC">Registrarme</string>
 
+    <!--Productos-->
+    <string name="txtAgregarProductos">Agregar Productos</string>
+    <string name="etNombresP">Nombre del producto</string>
+    <string name="etDescripcionP">Descripción</string>
+    <string name="Categria">Categoría</string>
+    <string name="etPrecioP">Precio</string>
+    <string name="txtDescuento">Descuento</string>
+    <string name="etPrecioConDescuentoP">Precio con descuento apli.</string>
+    <string name="etNotaDescuentoP">Ejm: 10% Desc.</string>
+    <string name="btnAgregarProducto">Agregar Producto</string>
+
+
+
     <!--<string name="op">Blum</string>
     <string name="op">Blum</string>-->
 </resources>
