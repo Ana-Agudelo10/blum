@@ -18,6 +18,7 @@ import com.ecommerce.blum.SeleccionarTipoActivity
 import com.ecommerce.blum.databinding.ActivityMainVendedorBinding
 import com.ecommerce.blum.vendedor.Bottom_nav_fragments_vendedor.FragmentMisProductosV
 import com.ecommerce.blum.vendedor.Bottom_nav_fragments_vendedor.FragmentOrdenesV
+import com.ecommerce.blum.vendedor.Nav_fragments_vendedor.FragmentCategoriasV
 import com.ecommerce.blum.vendedor.Nav_fragments_vendedor.FragmentInicioV
 import com.ecommerce.blum.vendedor.Nav_fragments_vendedor.FragmentMiTiendaV
 import com.ecommerce.blum.vendedor.Nav_fragments_vendedor.FragmentResenaV
@@ -99,6 +100,9 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
             }
             R.id.op_reseñas_v -> {
                 replaceFragment(FragmentResenaV())
+            }
+            R.id.op_categorias_v -> {
+                replaceFragment(FragmentCategoriasV())
             }
             R.id.op_cerrar_sesion_v -> {
                 cerrarSesion()

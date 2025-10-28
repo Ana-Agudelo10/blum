@@ -10,6 +10,7 @@
     <!-- Navegation Drawel Vendedor -->
     <string name="op_inicio_v">Inicio</string>
     <string name="op_mi_tienda">Mi tienda</string>
+    <string name="op_categorias_v">Categorías</string>
     <string name="op_reseñas_v">Reseñas</string>
     <string name="op_cerrar_sesion_v">Cerrar sesion</string>
 
@@ -70,7 +71,9 @@
     <string name="etNotaDescuentoP">Ejm: 10% Desc.</string>
     <string name="btnAgregarProducto">Agregar Producto</string>
 
-
+    <!--Agregar categorias-->
+    <string name="etCategoria">Ingrese categoria</string>
+    <string name="btnAgregarCat">Agregar categoria</string>
 
     <!--<string name="op">Blum</string>
     <string name="op">Blum</string>-->

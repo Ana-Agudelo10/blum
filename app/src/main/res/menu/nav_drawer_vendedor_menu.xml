@@ -7,11 +7,17 @@
         android:id="@+id/group_op"
         android:checkableBehavior="single">
 
-        <!-- IniCIO -->
+        <!-- Inicio -->
         <item
             android:id="@+id/op_inicio_v"
             android:title="@string/op_inicio_v"
             android:icon="@drawable/icono_inicio"/>
+
+        <!-- Categoias -->
+        <item
+            android:id="@+id/op_categorias_v"
+            android:title="@string/op_categorias_v"
+            android:icon="@drawable/ico_categoria"/>
 
         <!-- Mi tienda -->
         <item
