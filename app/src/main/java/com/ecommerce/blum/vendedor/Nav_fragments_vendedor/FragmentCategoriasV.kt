@@ -15,6 +15,7 @@ import com.ecommerce.blum.R
 import com.ecommerce.blum.databinding.FragmentCategoriasVBinding
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 
 class FragmentCategoriasV : Fragment() {
 
@@ -80,7 +81,9 @@ class FragmentCategoriasV : Fragment() {
 
         if (categoria.isEmpty()) {
             Toast.makeText(context, "Ingrese una categoria", Toast.LENGTH_SHORT).show()
-        } else {
+        }else if (imageUri == null){
+            Toast.makeText(context, "Seleccione una imagen", Toast.LENGTH_SHORT).show()
+        }        else {
             binding.etCategoria.error = null
             agregarCatBD()
         }
@@ -101,9 +104,10 @@ class FragmentCategoriasV : Fragment() {
         ref.child("${keyId}")
             .setValue(hashMap)
             .addOnSuccessListener {
-                progressDialog.dismiss()
-                Toast.makeText(context, "Categoria agregada correctamente", Toast.LENGTH_SHORT).show()
-                binding.etCategoria.setText("")
+                //progressDialog.dismiss()
+                //Toast.makeText(context, "Categoria agregada correctamente", Toast.LENGTH_SHORT).show()
+                //binding.etCategoria.setText("")
+                subirImgStorage(keyId!!)
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()
@@ -111,4 +115,56 @@ class FragmentCategoriasV : Fragment() {
             }
     }
 
+    private fun subirImgStorage(keyId: String) {
+
+        progressDialog.setMessage("Subiendo imagen...")
+        progressDialog.show()
+
+        val nombreImagen = keyId
+        val nombreCarpeta = "Categorias/${nombreImagen}"
+        val storageReference = FirebaseStorage.getInstance().getReference(nombreCarpeta)
+        storageReference.putFile(imageUri!!)
+            .addOnSuccessListener {taskSnapshot ->
+                progressDialog.dismiss()
+                val uriTask =  taskSnapshot.storage.downloadUrl
+                while (!uriTask.isSuccessful);
+                val urlImgCargada = uriTask.result
+
+                if(uriTask.isSuccessful){
+                    val hashMap = HashMap<String, Any>()
+                    hashMap["imagenUrl"] = "${urlImgCargada}"
+
+                    val ref = FirebaseDatabase.getInstance().getReference("Categorias")
+                    ref.child(nombreImagen).updateChildren(hashMap)
+                    Toast.makeText(context, "Categoria agregada correctamente", Toast.LENGTH_SHORT).show()
+                    binding.etCategoria.setText("")
+                    imageUri = null
+                    binding.imgCategorias.setImageURI(imageUri)
+                    binding.imgCategorias.setImageResource(R.drawable.categorias)
+
+                }
+            }
+            .addOnFailureListener { e ->
+                progressDialog.dismiss()
+                Toast.makeText(context, "Fallo al subir imagen debido a ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
