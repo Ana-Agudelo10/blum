@@ -104,10 +104,23 @@
                 </EditText>
 
             </com.google.android.material.textfield.TextInputLayout>
+            <!--Categoria-->
+            <TextView
+                android:id="@+id/Categria"
+                android:text="@string/Categria"
+                android:layout_below="@id/TIL_DescripcionP"
+                android:padding="15dp"
+                android:textSize="17sp"
+                android:layout_marginTop="5dp"
+                app:drawableEndCompat="@drawable/ico_abajo"
+                android:gravity="center_vertical"
+                android:background="@drawable/custom_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
             <!--Precio-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TIL_Precio"
-                android:layout_below="@id/TIL_DescripcionP"
+                android:layout_below="@id/Categria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 

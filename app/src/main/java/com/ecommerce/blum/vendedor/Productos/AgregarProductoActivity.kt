@@ -5,13 +5,19 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.ecommerce.blum.Adaptadores.AdaptadorImagenSeleccionada
 import com.ecommerce.blum.Constantes
+import com.ecommerce.blum.Modelos.ModeloCategoria
 import com.ecommerce.blum.Modelos.ModeloImagenSeleccionada
 import com.ecommerce.blum.R
 import com.ecommerce.blum.databinding.ActivityAgregarProductoBinding
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class AgregarProductoActivity : AppCompatActivity() {
     private lateinit var binding : ActivityAgregarProductoBinding
@@ -20,10 +26,14 @@ class AgregarProductoActivity : AppCompatActivity() {
     private lateinit var imagenSelecArrayList: ArrayList<ModeloImagenSeleccionada>
     private lateinit var adaptadorImagenSet: AdaptadorImagenSeleccionada
 
+    private lateinit var caegoriasArrayList: ArrayList<ModeloCategoria>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAgregarProductoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        cargarCategorias()
 
         imagenSelecArrayList = ArrayList()
 
@@ -31,8 +41,53 @@ class AgregarProductoActivity : AppCompatActivity() {
             seleccionarImagen()
         }
 
+
+        binding.Categria.setOnClickListener {
+            selecCategorias()
+        }
+
         cargarImagenes()
 
+    }
+
+    private fun cargarCategorias() {
+
+        caegoriasArrayList = ArrayList()
+        val ref = FirebaseDatabase.getInstance().getReference("Categorias").orderByChild("categoria")
+        ref.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                caegoriasArrayList.clear()
+                for(ds in snapshot.children){
+                    val modelo = ds.getValue(ModeloCategoria::class.java)
+                    caegoriasArrayList.add(modelo!!)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+
+    }
+
+    private var idCat = ""
+    private var tituloCat = ""
+
+    private fun  selecCategorias(){
+
+        val categoriasArray = arrayOfNulls<String>(caegoriasArrayList.size)
+        for(i in caegoriasArrayList.indices) {
+            categoriasArray[i] = caegoriasArrayList[i].categoria
+        }
+
+        val bulder = AlertDialog.Builder(this)
+        bulder.setTitle("Seleccione una categoría")
+            .setItems(categoriasArray) { dialog, which ->
+                idCat = caegoriasArrayList[which].id
+                tituloCat = caegoriasArrayList[which].categoria
+                binding.Categria.text = tituloCat
+            }
+            .show()
     }
 
     private fun cargarImagenes() {
