@@ -11,10 +11,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.ecommerce.blum.Adaptadores.AdapdadorCategoriaV
+import com.ecommerce.blum.Modelos.ModeloCategoria
 import com.ecommerce.blum.R
 import com.ecommerce.blum.databinding.FragmentCategoriasVBinding
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 
 class FragmentCategoriasV : Fragment() {
@@ -22,6 +27,10 @@ class FragmentCategoriasV : Fragment() {
     private lateinit var binding : FragmentCategoriasVBinding
     private lateinit var mContext : Context
     private lateinit var progressDialog : ProgressDialog
+
+    private lateinit var categoriasArrayList: ArrayList<ModeloCategoria>
+
+    private lateinit var adapdadorCategoriaV: AdapdadorCategoriaV
 
     private var imageUri : Uri? = null
 
@@ -45,7 +54,30 @@ class FragmentCategoriasV : Fragment() {
         binding.btnAgregarCat.setOnClickListener {
             validarInfo()
         }
+
+        listarCategorias()
+
         return binding.root
+    }
+
+    private fun listarCategorias() {
+        categoriasArrayList = ArrayList()
+        val ref = FirebaseDatabase.getInstance().getReference("Categorias").orderByChild("categoria")
+        ref.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                categoriasArrayList.clear()
+                for (ds in snapshot.children){
+                    val modelo = ds.getValue(ModeloCategoria::class.java)
+                    categoriasArrayList.add(modelo!!)
+                }
+                adapdadorCategoriaV = AdapdadorCategoriaV(mContext, categoriasArrayList)
+                binding.rvCategorias.adapter = adapdadorCategoriaV
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
     }
 
     private fun seleccionarImg() {

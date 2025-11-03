@@ -75,6 +75,10 @@
     <string name="etCategoria">Ingrese categoria</string>
     <string name="btnAgregarCat">Agregar categoria</string>
 
+    <!-- Item Categoria - v -->
+    <string name="item_nombre_c_v">Nombre de categoria:</string>
+
+
     <!--<string name="op">Blum</string>
     <string name="op">Blum</string>-->
 </resources>
