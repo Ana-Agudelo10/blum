@@ -1,0 +1,10 @@
+# === Android Studio ===
+.idea/
+*.iml
+.gradle/
+local.properties
+build/
+/captures/
+.DS_Store
+/out/
+/navigation.json

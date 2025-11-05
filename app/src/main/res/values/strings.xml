@@ -64,7 +64,7 @@
     <string name="txtAgregarProductos">Agregar Productos</string>
     <string name="etNombresP">Nombre del producto</string>
     <string name="etDescripcionP">Descripción</string>
-    <string name="Categria">Categoría</string>
+    <string name="Categoria">Categoría</string>
     <string name="etPrecioP">Precio</string>
     <string name="txtDescuento">Descuento</string>
     <string name="etPrecioConDescuentoP">Precio con descuento apli.</string>

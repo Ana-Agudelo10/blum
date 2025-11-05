@@ -106,8 +106,8 @@
             </com.google.android.material.textfield.TextInputLayout>
             <!--Categoria-->
             <TextView
-                android:id="@+id/Categria"
-                android:text="@string/Categria"
+                android:id="@+id/Categoria"
+                android:hint="@string/Categoria"
                 android:layout_below="@id/TIL_DescripcionP"
                 android:padding="15dp"
                 android:textSize="17sp"
@@ -120,12 +120,12 @@
             <!--Precio-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TIL_Precio"
-                android:layout_below="@id/Categria"
+                android:layout_below="@id/Categoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/etPrecio"
+                    android:id="@+id/etPrecioP"
                     android:hint="@string/etPrecioP"
                     android:inputType="numberDecimal"
                     android:layout_width="match_parent"
@@ -161,7 +161,7 @@
             </com.google.android.material.textfield.TextInputLayout>
             <!--Noyta del descuento-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TIL_NotaDescuento"
+                android:id="@+id/TIL_NotaDesc"
                 android:layout_below="@id/TIL_PrecioDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
