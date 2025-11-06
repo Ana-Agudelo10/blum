@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 
-class AdaptadorProducto : RecyclerView.Adapter<AdaptadorProducto.HolderProducto> {
+    class AdaptadorProducto : RecyclerView.Adapter<AdaptadorProducto.HolderProducto> {
 
     private lateinit var binding : ItemProductoBinding
 
@@ -54,8 +54,45 @@ class AdaptadorProducto : RecyclerView.Adapter<AdaptadorProducto.HolderProducto>
 
         holder.item_nombre_p.text = "${nombre}"
         holder.item_precio_p.text = "${precio}${" COP"}"
+        holder.item_precio_p_desc.text = "${precioDesc}"
+        holder.item_nota_p.text = "${notaDesc}"
 
 
+        /* Si el precio con desc y la nota no son campos vacios*/
+        if(precioDesc.isNotEmpty() && notaDesc.isNotEmpty()){
+            visualizarDescuento(holder)
+        }
+
+
+    }
+
+    private fun visualizarDescuento(holder: HolderProducto) {
+        val ref = FirebaseDatabase.getInstance().getReference("Productos")
+        ref.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for(ds in snapshot.children) {
+                    val nota_Desc = "${ds.child("notaDesc").value}"
+                    val precio_Desc = "${ds.child("precioDesc").value}"
+
+                    if(nota_Desc.isNotEmpty() && precio_Desc.isNotEmpty()){
+                        //Habilitamos las vistas
+
+                        holder.item_nota_p.visibility = View.VISIBLE
+                        holder.item_precio_p_desc.visibility = View.VISIBLE
+                        //Seteamos la info
+
+                        holder.item_nota_p.text = "${nota_Desc}"
+                        holder.item_precio_p_desc.text = "${precio_Desc}${" COP "}"
+
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        }
+        )
     }
 
     private fun cargarPrimeraImagen(
@@ -97,6 +134,7 @@ class AdaptadorProducto : RecyclerView.Adapter<AdaptadorProducto.HolderProducto>
         var item_nombre_p = binding.itemNombreP
         var item_precio_p = binding.itemPrecioP
         var item_precio_p_desc = binding.itemPrecioPDesc
+        var item_nota_p = binding.itemNotaP
     }
 
 

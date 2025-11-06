@@ -32,6 +32,17 @@
             android:textSize="17sp"
             android:textStyle="bold"
             android:maxLines="1"/>
+        <!--Nota del descuento-->
+        <TextView
+            android:id="@+id/item_nota_p"
+            android:text="@string/item_nota_p"
+            android:padding="5dp"
+            android:visibility="gone"
+
+            android:background="@drawable/fondo_morado"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
         <!--Precio-->
         <TextView
             android:id="@+id/item_precio_p"
@@ -44,6 +55,7 @@
         <TextView
             android:id="@+id/item_precio_p_desc"
             android:text="@string/item_precio_p_desc"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
