@@ -78,6 +78,11 @@
     <!-- Item Categoria - v -->
     <string name="item_nombre_c_v">Nombre de categoria:</string>
 
+    <!--Item producto - vendedor-->
+    <string name="item_nombre_p">Nombre del producto</string>
+    <string name="item_precio_p">00</string>
+    <string name="item_precio_p_desc">00</string>
+
 
     <!--<string name="op">Blum</string>
     <string name="op">Blum</string>-->

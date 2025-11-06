@@ -3,17 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".vendedor.Bottom_nav_fragments_vendedor.FragmentMisProductosV">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productosRv"
         android:layout_width="match_parent"
-        android:layout_height="583dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="50dp"
-        android:gravity="center"
-        android:text="Mis productos"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+
+        tools:listitem="@layout/item_producto" />
+
 
 </FrameLayout>
