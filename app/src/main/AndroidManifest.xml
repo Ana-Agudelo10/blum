@@ -23,6 +23,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Blum">
         <activity
+            android:name=".cliente.ProductosC.ProductosCatCActivity"
+            android:exported="false" />
+        <activity
             android:name=".vendedor.Productos.AgregarProductoActivity"
             android:exported="false" />
         <activity

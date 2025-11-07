@@ -77,13 +77,19 @@
 
     <!-- Item Categoria - v -->
     <string name="item_nombre_c_v">Nombre de categoria:</string>
+    <string name="item_ver_productos">Ver productos</string>
+    <!-- Item Categoria - c -->
+    <string name="item_nombre_c_c">Nombre de categoria</string>
 
-    <!--Item producto - vendedor-->
+
+    <!--Item producto - v-->
     <string name="item_nombre_p">Nombre del producto</string>
     <string name="item_nota_p">50% OFF</string>
     <string name="item_precio_p">00</string>
     <string name="item_precio_p_desc">00</string>
 
+    <!--Item producto - c-->
+    <string name="item_agregar_carrito_p">Añadir al carrito</string>
 
 
     <!--<string name="op">Blum</string>

@@ -1,21 +1,14 @@
 package com.ecommerce.blum.Adaptadores
 
-import android.app.Dialog
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.ecommerce.blum.Modelos.ModeloCategoria
-import com.ecommerce.blum.R
 import com.ecommerce.blum.databinding.ItemCategoriaVBinding
-import com.google.android.material.button.MaterialButton
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 /*import com.markwang.tiendavirtualapp_kotlin.Modelos.ModeloCategoria
@@ -24,7 +17,7 @@ import com.markwang.tiendavirtualapp_kotlin.Vendedor.Productos.ProductosCatVActi
 import com.markwang.tiendavirtualapp_kotlin.databinding.ItemCategoriaVBinding*/
 
 
-class AdapdadorCategoriaV : RecyclerView.Adapter<AdapdadorCategoriaV.HolderCategoriaV> {
+class AdaptadorCategoriaV : RecyclerView.Adapter<AdaptadorCategoriaV.HolderCategoriaV> {
 
     private lateinit var binding : ItemCategoriaVBinding
 
@@ -71,7 +64,7 @@ class AdapdadorCategoriaV : RecyclerView.Adapter<AdapdadorCategoriaV.HolderCateg
 
     }
 
-    private fun eliminarCategoria(modelo: ModeloCategoria, holder: AdapdadorCategoriaV.HolderCategoriaV) {
+    private fun eliminarCategoria(modelo: ModeloCategoria, holder: AdaptadorCategoriaV.HolderCategoriaV) {
         val idCat = modelo.id
         val ref = FirebaseDatabase.getInstance().getReference("Categorias")
         ref.child(idCat).removeValue()

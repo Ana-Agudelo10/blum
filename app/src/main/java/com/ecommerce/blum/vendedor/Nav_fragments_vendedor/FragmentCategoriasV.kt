@@ -11,7 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import com.ecommerce.blum.Adaptadores.AdapdadorCategoriaV
+import com.ecommerce.blum.Adaptadores.AdaptadorCategoriaV
 import com.ecommerce.blum.Modelos.ModeloCategoria
 import com.ecommerce.blum.R
 import com.ecommerce.blum.databinding.FragmentCategoriasVBinding
@@ -30,7 +30,7 @@ class FragmentCategoriasV : Fragment() {
 
     private lateinit var categoriasArrayList: ArrayList<ModeloCategoria>
 
-    private lateinit var adapdadorCategoriaV: AdapdadorCategoriaV
+    private lateinit var adapdadorCategoriaV: AdaptadorCategoriaV
 
     private var imageUri : Uri? = null
 
@@ -70,7 +70,7 @@ class FragmentCategoriasV : Fragment() {
                     val modelo = ds.getValue(ModeloCategoria::class.java)
                     categoriasArrayList.add(modelo!!)
                 }
-                adapdadorCategoriaV = AdapdadorCategoriaV(mContext, categoriasArrayList)
+                adapdadorCategoriaV = AdaptadorCategoriaV(mContext, categoriasArrayList)
                 binding.rvCategorias.adapter = adapdadorCategoriaV
             }
 
