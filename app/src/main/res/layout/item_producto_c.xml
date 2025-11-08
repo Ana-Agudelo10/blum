@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -37,8 +38,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-
-
         </RelativeLayout>
 
 
@@ -65,50 +64,43 @@
             android:maxLines="1"/>
 
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
             android:gravity="top"
             android:padding="8dp">
-
-            <!--Precio-->
-            <TextView
-                android:id="@+id/item_precio_p"
-                android:text="@string/item_precio_p"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:maxLines="1"/>
 
             <!--precio con descuento del producto-->
             <TextView
                 android:id="@+id/item_precio_p_desc"
                 android:text="@string/item_precio_p_desc"
                 android:visibility="gone"
-                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/celeste"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:maxLines="1"/>
+                android:layout_height="wrap_content"/>
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            <!--Precio-->
+            <TextView
+                android:id="@+id/item_precio_p"
+                android:text="@string/item_precio_p"
+                android:textSize="16sp"
+                android:layout_toEndOf="@+id/item_precio_p_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-
-
+        </RelativeLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/item_agregar_carrito_p"
             android:text="@string/item_agregar_carrito_p"
             app:cornerRadius="8dp"
             android:textAllCaps="true"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
-
-
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

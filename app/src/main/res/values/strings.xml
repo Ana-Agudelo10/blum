@@ -91,6 +91,17 @@
     <!--Item producto - c-->
     <string name="item_agregar_carrito_p">Añadir al carrito</string>
 
+    <string name="etBuscarProducto">Buscar producto</string>
+
+    <!--Carrito de compras-->
+    <string name="nombrePCar">Nombre del producto</string>
+    <string name="descripcionPCar">Descripción</string>
+    <string name="notaDescPCar">10% OFF</string>
+    <string name="precioOriginalPCar">00</string>
+    <string name="precioDescPCar">00</string>
+    <string name="cantidadPCar">1</string>
+    <string name="precioFinalPCar">00</string>
+    <string name="btnAgregarCarrito">Agregar al carrito</string>
 
     <!--<string name="op">Blum</string>
     <string name="op">Blum</string>-->

@@ -5,7 +5,44 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".cliente.ProductosC.ProductosCatCActivity">
+
+  <androidx.appcompat.widget.LinearLayoutCompat
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="5">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="10dp"
+        android:layout_weight="4">
+
+      <EditText
+          android:id="@+id/etBuscarProducto"
+          android:hint="@string/etBuscarProducto"
+          android:drawablePadding="10dp"
+          app:drawableStartCompat="@drawable/ico_buscar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="10dp"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageButton
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:padding="10dp"
+
+        android:src="@drawable/ico_limpiar"
+        android:background="@android:color/transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+  </androidx.appcompat.widget.LinearLayoutCompat>
 
 
   <androidx.recyclerview.widget.RecyclerView
