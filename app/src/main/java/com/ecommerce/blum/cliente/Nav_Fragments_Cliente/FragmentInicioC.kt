@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ecommerce.blum.R
+import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentCarritoC
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentMisOrdenesC
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentTiendaC
 import com.ecommerce.blum.databinding.FragmentInicioCBinding
@@ -30,6 +31,10 @@ class FragmentInicioC : Fragment() {
                 }
                 R.id.op_mis_ordenes_c -> {
                     replaceFragmente(FragmentMisOrdenesC())
+                }
+                R.id.op_carrito_c->{
+                    replaceFragmente(FragmentCarritoC())
+
                 }
 
             }
