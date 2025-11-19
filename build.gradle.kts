@@ -4,4 +4,6 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
 
     alias(libs.plugins.googleService) apply false
+
+    alias(libs.plugins.map.secret) apply false
 }

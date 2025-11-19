@@ -29,6 +29,7 @@
     <string name="op_mis_ordenes_c">Mis Ordenes</string>
     <string name="txt_bienvenida">Bienvenido(a)</string>
     <string name="op_carrito_c">Carrito</string>
+    <string name="op_mapa">¿Dónde estamos?</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -59,7 +60,7 @@
     <string name="registrate_ahora">Registrate ahora</string>
 
     <!-- Login de cliente -->
-    <string name="txtLoginC">Unete C</string>
+    <string name="txtLoginC">Unete</string>
     <string name="btnLoginC">Ingresar</string>
     <string name="tvRegistrarC">Registrarme</string>
 

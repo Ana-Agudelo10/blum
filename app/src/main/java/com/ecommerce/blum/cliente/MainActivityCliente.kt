@@ -12,6 +12,7 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.ecommerce.blum.R
 import com.ecommerce.blum.SeleccionarTipoActivity
+import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentMapaC
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentMisOrdenesC
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentTiendaC
 import com.ecommerce.blum.cliente.Nav_Fragments_Cliente.FragmenMiPerfilC
@@ -98,6 +99,9 @@ class MainActivityCliente : AppCompatActivity() , NavigationView.OnNavigationIte
             }
             R.id.op_mis_ordenes_c -> {
                 replaceFragment(FragmentMisOrdenesC())
+            }
+            R.id.op_mapa_c -> {
+                replaceFragment(FragmentMapaC())
             }
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)

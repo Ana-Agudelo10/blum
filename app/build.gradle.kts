@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
 
     alias(libs.plugins.googleService)
+
+    alias(libs.plugins.map.secret)
 }
 
 android {
@@ -54,6 +56,7 @@ dependencies {
     implementation(libs.imagePicker) /*Recortar una imagen*/
     implementation(libs.glide) /*Leer Imagenes*/
     implementation(libs.storage) /*Subir archivos multimedia*/
+    implementation(libs.google.maps) /*Google Maps*/
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

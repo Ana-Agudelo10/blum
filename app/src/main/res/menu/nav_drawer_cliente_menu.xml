@@ -17,6 +17,11 @@
             android:title="@string/op_mi_perfil_c"
             android:icon="@drawable/ico_mi_perfil" />
 
+        <item
+            android:id="@+id/op_mapa_c"
+            android:title="@string/op_mapa"
+            android:icon="@drawable/icono_mapa"/>
+
     </group>
 
     <!--Cerrar -->

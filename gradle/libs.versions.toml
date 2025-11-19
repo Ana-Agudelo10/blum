@@ -17,6 +17,10 @@ imagePickerV = "2.1"
 glideV = "4.16.0"
 storageV = "22.0.1"
 
+mapSecretV = "2.0.1"
+
+googleMapsV = "17.0.0"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -33,9 +37,13 @@ imagePicker = {group="com.github.dhaval2404", name="imagepicker", version.ref="i
 glide={group="com.github.bumptech.glide", name="glide", version.ref="glideV"}
 storage={group="com.google.firebase", name="firebase-storage", version.ref="storageV"}
 
+google-maps = {group = 'com.google.android.gms', name= "play-services-maps", version.ref="googleMapsV"}
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
 googleService = { id = "com.google.gms.google-services", version.ref = "googleServiceV" }
+
+map-secret = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version = "2.0.1" }
 
