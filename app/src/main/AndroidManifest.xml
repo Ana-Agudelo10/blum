@@ -23,9 +23,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Blum">
         <activity
-            android:name=".cliente.Bottom_Nav_Fragments_Cliente.FragmentMapaC"
-            android:exported="false" />
-        <activity
             android:name=".cliente.ProductosC.ProductosCatCActivity"
             android:exported="false" />
         <activity
@@ -64,7 +61,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyB14FQxP2CMXAyq9h7tW7tWoq2nMMYGTsk" />
+            android:value="${MAPAS_KEY}" />
     </application>
 
 </manifest>
