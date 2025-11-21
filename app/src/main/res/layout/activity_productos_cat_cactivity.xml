@@ -33,10 +33,10 @@
     </com.google.android.material.card.MaterialCardView>
 
     <ImageButton
+        android:id="@+id/IbLimpiarCampo"
         android:layout_weight="1"
         android:layout_gravity="center"
         android:padding="10dp"
-
         android:src="@drawable/ico_limpiar"
         android:background="@android:color/transparent"
         android:layout_width="wrap_content"

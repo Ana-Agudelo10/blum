@@ -1,6 +1,9 @@
 package com.ecommerce.blum.cliente.ProductosC
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,6 +32,42 @@ class ProductosCatCActivity : AppCompatActivity() {
         //Obtenemos el nombre de la categoria
         nombreCat = intent.getStringExtra("nombreCat").toString()
         listarProductos(nombreCat)
+
+        binding.etBuscarProducto.addTextChangedListener(object : TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(
+                s: CharSequence?,
+                start: Int,
+                count: Int,
+                after: Int
+            ) {
+
+            }
+
+            override fun onTextChanged(filtro: CharSequence?, start: Int, before: Int, count: Int) {
+                try {
+
+                    val consulta = filtro.toString()
+                    adaptadorProductos.filter.filter(consulta)
+
+                }catch (e: Exception ){
+
+                }
+            }
+        })
+
+        binding.IbLimpiarCampo.setOnClickListener {
+            val consulta = binding.etBuscarProducto.text.toString().trim()
+            if (consulta.isNotEmpty()){
+                binding.etBuscarProducto.setText("")
+                Toast.makeText(this, "Campo Limpiado", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this, "No se ha ingresado una consulta", Toast.LENGTH_SHORT).show()
+            }
+        }
 
     }
 

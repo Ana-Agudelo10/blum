@@ -7,11 +7,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.ecommerce.blum.Filtro.FiltroProducto
 import com.ecommerce.blum.Modelos.ModeloProducto
 import com.ecommerce.blum.R
 import com.ecommerce.blum.databinding.ItemProductoCBinding
@@ -24,15 +27,18 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 
-class AdaptadorProductoC : RecyclerView.Adapter<AdaptadorProductoC.HolderProducto> {
+class AdaptadorProductoC : RecyclerView.Adapter<AdaptadorProductoC.HolderProducto>, Filterable {
     private lateinit var binding: ItemProductoCBinding
 
     private var mContex: Context
-    private var productosArrayList: ArrayList<ModeloProducto>
+    var productosArrayList: ArrayList<ModeloProducto>
+    private var filtroLista : ArrayList<ModeloProducto>
+    private var filtro : FiltroProducto ?= null
 
     constructor(mContex: Context, productosArrayList: ArrayList<ModeloProducto>) {
         this.mContex = mContex
         this.productosArrayList = productosArrayList
+        this.filtroLista = productosArrayList
     }
 
     override fun onCreateViewHolder(
@@ -290,6 +296,13 @@ class AdaptadorProductoC : RecyclerView.Adapter<AdaptadorProductoC.HolderProduct
                     TODO("Not yet implemented")
                 }
             })
+    }
+
+    override fun getFilter(): Filter {
+        if (filtro == null){
+            filtro = FiltroProducto(this, filtroLista)
+        }
+        return filtro as FiltroProducto
     }
 
 
