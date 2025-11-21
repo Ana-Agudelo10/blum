@@ -56,6 +56,7 @@ dependencies {
     implementation(libs.imagePicker) /*Recortar una imagen*/
     implementation(libs.glide) /*Leer Imagenes*/
     implementation(libs.storage) /*Subir archivos multimedia*/
+    implementation(libs.authGoogle) /*Iniciar con google*/
     implementation(libs.google.maps) /*Google Maps*/
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
