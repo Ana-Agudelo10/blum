@@ -14,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.ecommerce.blum.Constantes
 import com.ecommerce.blum.Filtro.FiltroProducto
 import com.ecommerce.blum.Modelos.ModeloProducto
 import com.ecommerce.blum.R
@@ -34,11 +35,13 @@ class AdaptadorProductoC : RecyclerView.Adapter<AdaptadorProductoC.HolderProduct
     var productosArrayList: ArrayList<ModeloProducto>
     private var filtroLista : ArrayList<ModeloProducto>
     private var filtro : FiltroProducto ?= null
+    private var firebaseAuth : FirebaseAuth
 
     constructor(mContex: Context, productosArrayList: ArrayList<ModeloProducto>) {
         this.mContex = mContex
         this.productosArrayList = productosArrayList
         this.filtroLista = productosArrayList
+        firebaseAuth = FirebaseAuth.getInstance()
     }
 
     override fun onCreateViewHolder(
@@ -65,11 +68,25 @@ class AdaptadorProductoC : RecyclerView.Adapter<AdaptadorProductoC.HolderProduct
         val notaDesc = modeloProducto.notaDesc
 
         cargarPrimeraImagen(modeloProducto, holder)
+        comprobarFavorito(modeloProducto, holder)
 
         holder.item_nombre_p.text = "${nombre}"
         holder.item_precio_p.text = "${precio}${" COP"}"
         holder.item_precio_p_desc.text = "${precioDesc}"
         holder.item_nota_p.text = "${notaDesc}"
+
+        //Evento al presionar en el imageButton Fav
+        holder.Ib_fav.setOnClickListener {
+            val favorito = modeloProducto.favorito
+            if (favorito){
+
+                //Favorito = True
+                Constantes().eliminarProductoFav(mContex, modeloProducto.id)
+            }else{
+                //Favorito = False
+                Constantes().agregarProductoFav(mContex, modeloProducto.id)
+            }
+        }
 
 
         /* Si el precio con desc y la nota no son campos vacios*/
@@ -82,6 +99,31 @@ class AdaptadorProductoC : RecyclerView.Adapter<AdaptadorProductoC.HolderProduct
             verCarrito(modeloProducto)
         }
 
+    }
+
+    private fun comprobarFavorito(modeloProducto: ModeloProducto, holder: HolderProducto) {
+
+        val ref = FirebaseDatabase.getInstance().getReference("Usuarios")
+        ref.child(firebaseAuth.uid!!).child("Favoritos").child(modeloProducto.id)
+            .addValueEventListener(object  : ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+
+                    val favorito = snapshot.exists()
+                    modeloProducto.favorito = favorito
+
+                    if (favorito){
+                        holder.Ib_fav.setImageResource(R.drawable.ico_favorito)
+                    }else{
+
+                        holder.Ib_fav.setImageResource(R.drawable.ic_no_favorito)
+                    }
+
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+            })
     }
 
     var costo : Double = 0.0
@@ -312,6 +354,7 @@ class AdaptadorProductoC : RecyclerView.Adapter<AdaptadorProductoC.HolderProduct
         var item_precio_p = binding.itemPrecioP
         var item_precio_p_desc = binding.itemPrecioPDesc
         var item_nota_p = binding.itemNotaP
+        var Ib_fav = binding.IbFav
         var agregar_carrito = binding.itemAgregarCarritoP
     }
 }

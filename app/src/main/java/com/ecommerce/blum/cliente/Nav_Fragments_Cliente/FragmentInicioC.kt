@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ecommerce.blum.R
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentCarritoC
+import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentFavoritosC
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentMisOrdenesC
 import com.ecommerce.blum.cliente.Bottom_Nav_Fragments_Cliente.FragmentTiendaC
 import com.ecommerce.blum.databinding.FragmentInicioCBinding
@@ -29,6 +30,10 @@ class FragmentInicioC : Fragment() {
                 R.id.op_tienda_c -> {
                     replaceFragmente(FragmentTiendaC())
                 }
+                R.id.op_favoritos_c ->{
+                    replaceFragmente(FragmentFavoritosC())
+                }
+
                 R.id.op_mis_ordenes_c -> {
                     replaceFragmente(FragmentMisOrdenesC())
                 }
